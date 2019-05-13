@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { View } from 'react-native';
 
 // import { Container } from './styles';
 
-const Dashboard = () => <View />;
+export default class Dashboard extends Component {
+  static navigationOptions = {
+    title: 'Dashboard',
+    header: null,
+  };
 
-export default Dashboard;
+  render() {
+    return <View />;
+  }
+}
