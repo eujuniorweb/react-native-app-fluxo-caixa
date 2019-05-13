@@ -30,14 +30,6 @@ export default class Login extends Component {
       const { email, senha } = this.state;
       firebase.auth().onAuthStateChanged((authUser) => {
         if (authUser) {
-          const { uid } = authUser;
-          firebase
-            .database()
-            .ref('users')
-            .child(uid)
-            .set({
-              saldo: 0,
-            });
           const { navigation } = this.props;
           navigation.navigate('Dashboard');
         }
