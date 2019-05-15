@@ -36,7 +36,7 @@ export default class Login extends Component {
       });
       firebase
         .auth()
-        .createUserWithEmailAndPassword(email, senha)
+        .signInWithEmailAndPassword(email, senha)
         .catch((error) => {
           alert(error.code);
         });
