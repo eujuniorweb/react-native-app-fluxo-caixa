@@ -6,16 +6,16 @@ import {
 } from 'react-native';
 import styles from './styles';
 
-export default class Receita extends Component {
+export default class Despesa extends Component {
   static navigationOptions = {
-    title: 'Adicionar Receita',
+    title: 'Adicionar Despesa',
   };
 
   state = {
     valor: '',
   };
 
-  adicionar = () => {
+  retirar = () => {
     if (this.valor !== '') {
       const { navigation } = this.props;
       const { valor } = this.state;
@@ -30,12 +30,12 @@ export default class Receita extends Component {
 
       const { key } = history.push();
       history.child(key).set({
-        type: 'receita',
+        type: 'despesa',
         valor,
       });
       user.once('value').then((snapshot) => {
         let { saldo } = snapshot.val();
-        saldo += parseFloat(valor);
+        saldo -= parseFloat(valor);
         user.set({
           saldo,
         });
@@ -49,7 +49,7 @@ export default class Receita extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.form}>
-          <Text style={styles.title}>Quanto você quer adicionar?</Text>
+          <Text style={styles.title}>Quanto você quer retirar?</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"
@@ -57,8 +57,8 @@ export default class Receita extends Component {
             onChangeText={text => this.setState({ valor: text })}
             autoFocus
           />
-          <TouchableOpacity style={styles.button} onPress={this.adicionar}>
-            <Text style={styles.buttonText}>Adiconar</Text>
+          <TouchableOpacity style={styles.button} onPress={this.retirar}>
+            <Text style={styles.buttonText}>Retirar</Text>
           </TouchableOpacity>
         </View>
       </View>

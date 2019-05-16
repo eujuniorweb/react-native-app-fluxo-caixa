@@ -43,7 +43,10 @@ export default class Dashboard extends Component {
     navigation.navigate('Receita');
   };
 
-  addDespesa = () => {};
+  addDespesa = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Despesa');
+  };
 
   logout = () => {
     firebase.auth().signOut();
@@ -55,7 +58,7 @@ export default class Dashboard extends Component {
       <View style={styles.container}>
         <View style={styles.form}>
           <Text style={styles.title}>Saldo R$</Text>
-          <Text style={styles.valor}>{saldo}</Text>
+          <Text style={styles.valor}>{saldo.toFixed(2)}</Text>
         </View>
         <FlatList
           style={styles.history}

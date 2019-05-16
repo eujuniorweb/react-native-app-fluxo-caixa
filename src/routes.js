@@ -6,6 +6,7 @@ import Login from '~/pages/Login';
 import Dashboard from '~/pages/Dashboard';
 import Preload from '~/pages/Preload';
 import Receita from '~/pages/Receita';
+import Despesa from '~/pages/Despesa';
 
 const Routes = createAppContainer(
   createStackNavigator({
@@ -15,6 +16,7 @@ const Routes = createAppContainer(
     Cadastro,
     Login,
     Receita,
+    Despesa,
   }),
 );
 export default Routes;
