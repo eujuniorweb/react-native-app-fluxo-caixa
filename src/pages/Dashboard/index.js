@@ -38,7 +38,10 @@ export default class Dashboard extends Component {
     });
   }
 
-  addReceita = () => {};
+  addReceita = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Receita');
+  };
 
   addDespesa = () => {};
 
