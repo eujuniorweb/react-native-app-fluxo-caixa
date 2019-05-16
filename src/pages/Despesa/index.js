@@ -31,7 +31,7 @@ export default class Despesa extends Component {
       const { key } = history.push();
       history.child(key).set({
         type: 'despesa',
-        valor: parseFloat(valor).toFixed(2),
+        valor: parseFloat(valor),
       });
       user.once('value').then((snapshot) => {
         let { saldo } = snapshot.val();
