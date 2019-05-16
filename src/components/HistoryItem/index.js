@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
-// import { Container } from './styles';
+import styles from './styles';
 
-const components = () => <View />;
+export default class HistoryItem extends Component {
+  state = {};
 
-export default components;
+  render() {
+    const { type, valor } = this.props.data;
+    return (
+      <View style={styles.container}>
+        <Text style={styles.subtitle}>{type}</Text>
+        <Text style={styles.subtitle}>
+          R$
+          {parseFloat(valor).toFixed(2)}
+        </Text>
+      </View>
+    );
+  }
+}

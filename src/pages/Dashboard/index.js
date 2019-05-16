@@ -32,6 +32,22 @@ export default class Dashboard extends Component {
             state.saldo = snapshot.val().saldo;
             this.setState(state);
           });
+        firebase
+          .database()
+          .ref('history')
+          .child(uid)
+          .on('value', (snapshot) => {
+            const { state } = this;
+            state.history = [];
+            snapshot.forEach((childItem) => {
+              state.history.push({
+                key: childItem.key,
+                type: childItem.val().type,
+                valor: childItem.val().valor,
+              });
+            });
+            this.setState(state);
+          });
       } else {
         navigation.navigate('Home');
       }
@@ -63,7 +79,7 @@ export default class Dashboard extends Component {
         <FlatList
           style={styles.history}
           data={history}
-          renderItem={item => <HistoryItem data={item} />}
+          renderItem={({ item }) => <HistoryItem data={item} />}
         />
         <View style={styles.buttonArea}>
           <TouchableOpacity style={styles.button} onPress={this.addReceita}>
