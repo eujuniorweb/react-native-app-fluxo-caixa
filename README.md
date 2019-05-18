@@ -8,7 +8,7 @@
 
 O app fluxo de caixa controla a entrada e saída de despesas em caixa. Utiliza o direbase database para manipular os dados e o firebase auth para login , cadastro e autenticação de usuário.
 
-![](../header.png)
+![ic_launcher](https://user-images.githubusercontent.com/16734230/57975494-710e4680-79a0-11e9-9211-3f5145e6388e.png)
 
 ## Instalação
 
