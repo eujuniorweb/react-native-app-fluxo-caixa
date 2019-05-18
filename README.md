@@ -2,7 +2,7 @@
 > Fluxo de receitas e despesas para controle de caixa.
 
 [![GitHub stars](https://img.shields.io/github/stars/eujuniorweb/react-native-app-fluxo-caixa.svg)](https://github.com/eujuniorweb/react-native-app-fluxo-caixa/stargazers)
- <a href="https://github.com/facebook/react-native/blob/master/LICENSE">
+ <a href="https://github.com/eujuniorweb/react-native-app-fluxo-caixa/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Fluxo de Caixa is released under the MIT license." />
   </a>
 
